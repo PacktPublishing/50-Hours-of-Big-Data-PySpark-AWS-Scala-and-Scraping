@@ -1,0 +1,19 @@
+db.createCollection('updateQuiz2')
+
+db.updateQuiz2.insertMany([
+{
+   _id: 1,
+   code: "xyz",
+   tags: [ "school", "book", "bag", "headphone", "appliance" ]
+},
+{
+   _id: 2,
+   code: "ayz",
+   tags: [ "school", "headphone", "appliance" ]
+},
+{
+   _id: 3,
+   code: "ayb",
+   tags: [ "book", "bag", "appliance" ]
+}
+])

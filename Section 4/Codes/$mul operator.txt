@@ -1,0 +1,8 @@
+db.createCollection('mulOperator')
+
+db.mulOperator.insertMany([
+{ "_id" : 1, "item" : "ABC", "price" : 10.99, "qty" : 23 },
+{ "_id" : 2, "item" : "ABD", "price" : 12.55, "qty" : 24 },
+{ "_id" : 3, "item" : "ABE", "price" : 13.43, "qty" : 15 },
+{ "_id" : 4, "item" : "ABF", "price" : 15.23, "qty" : 5 }
+])

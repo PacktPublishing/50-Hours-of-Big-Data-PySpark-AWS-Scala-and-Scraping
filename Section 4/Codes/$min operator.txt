@@ -1,0 +1,8 @@
+db.createCollection('minOperator')
+
+db.minOperator.insertMany([
+{ _id: 1, highScore: 800, lowScore: 150 },
+{ _id: 2, highScore: 500, lowScore: 330 },
+{ _id: 3, highScore: 850, lowScore: 200 },
+{ _id: 4, highScore: 60, lowScore: 260 },
+])

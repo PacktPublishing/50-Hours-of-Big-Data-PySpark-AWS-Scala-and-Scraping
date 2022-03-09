@@ -1,0 +1,5 @@
+db.createCollection('addToSetOperator')
+
+db.addToSetOperator.insertMany([
+{ _id: 1, letters: ["a", "b"] },
+])

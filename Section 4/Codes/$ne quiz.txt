@@ -1,0 +1,14 @@
+db.createCollection('neQuiz')
+
+db.neQuiz.insertMany([
+{ _id: 1, item: { name: "ab", code: "123", size: 20, sizes:[2,3,4] }, qty: 15, tags: [ "A", "B", "C" ] },
+{ _id: 2, item: { name: "cd", code: "123", size: 10, sizes:[1,2,5] }, qty: 20, tags: [ "B" ] },
+{ _id: 3, item: { name: "ij", code: "456", size: 15, sizes:[1,2,3] }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456", size: 23, sizes:[1,2,4] }, qty: 30, tags: [ "B", "A" ] },
+{ _id: 5, item: { name: "mn", code: "000", size: 12, sizes:[1,2,5] }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+])
+
+
+db.neQuiz.find({qty: {$ne: 20}})
+db.neQuiz.find({"item.size": {$ne: 10}})
+db.neQuiz.find({"item.sizes": {$ne: 5}})

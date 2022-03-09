@@ -1,0 +1,14 @@
+db.createCollection('inQuiz')
+
+db.inQuiz.insertMany([
+{ _id: 1, item: { name: "ab", code: "123", size: 12, sizes: [20] }, qty: 15, tags: [ "A", "B", "C" ] },
+{ _id: 2, item: { name: "cd", code: "123", size: 13, sizes: [4,2,33] }, qty: 20, tags: [ "B" ] },
+{ _id: 3, item: { name: "ij", code: "456", size: 11, sizes: [1,22,4] }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456", size: 10, sizes: [6,4,2] }, qty: 30, tags: [ "B", "A", "D" ] },
+{ _id: 5, item: { name: "mn", code: "000", size: 1, sizes: [1,2,3] }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+])
+
+db.inQuiz.find({qty: {$in: [15,25,35]}})
+db.inQuiz.find({"item.sizes": {$in: [2,22]}})
+db.inQuiz.find({"item.code": {$in: ["123","000"]}})
+db.inQuiz.find({tags: {$in: [["A","B"], "D"]     }})

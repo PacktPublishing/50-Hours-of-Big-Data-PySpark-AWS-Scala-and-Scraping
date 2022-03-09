@@ -1,0 +1,34 @@
+db.createCollection('readQuiz')
+
+db.readQuiz.insertMany([
+{_id: 1,sku: "abc123",quantity: 10,metrics: {orders: 12,ratings: 4.5}},
+{_id: 2,sku: "abc124",quantity: 9,metrics: {orders: 42,ratings: 3.5}},
+{_id: 3,sku: "abc125",quantity: 10,metrics: {orders: 12,ratings: 3.5}},
+{_id: 4,sku: "abc126",quantity: 15,metrics: {orders: 20,ratings: 3}},
+{_id: 5,sku: "abc127",quantity: 1,metrics: {orders: 22,ratings: 4}},
+{_id: 6,sku: "abc128",quantity: 10,metrics: {orders: 1,ratings: 3.5}}
+])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+db.createCollection('deleteQuiz')
+
+db.deleteQuiz.insertMany([
+{_id: 1,sku: "abc123",quantity: 10,metrics: {orders: 12,ratings: 4.5}},
+{_id: 2,sku: "abc124",quantity: 9,metrics: {orders: 42,ratings: 3.5}},
+{_id: 3,sku: "abc125",quantity: 10,metrics: {orders: 12,ratings: 3.5}},
+{_id: 4,sku: "abc126",quantity: 15,metrics: {orders: 20,ratings: 3}},
+{_id: 5,sku: "abc127",quantity: 1,metrics: {orders: 22,ratings: 4}},
+{_id: 6,sku: "abc128",quantity: 10,metrics: {orders: 1,ratings: 3.5}}
+])

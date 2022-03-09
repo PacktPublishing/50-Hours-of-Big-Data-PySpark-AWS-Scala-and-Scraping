@@ -1,0 +1,14 @@
+db.createCollection('ninQuiz')
+
+db.ninQuiz.insertMany([
+{ _id: 1, item: { name: "ab", code: "123", size: 20, sizes:[2,3,4] }, qty: 15, tags: [ "A", "B", "C" ] },
+{ _id: 2, item: { name: "cd", code: "123", size: 10, sizes:[1,2,5] }, qty: 20, tags: [ "B" ] },
+{ _id: 3, item: { name: "ij", code: "456", size: 15, sizes:[1,2,3] }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456", size: 23, sizes:[1,2,4] }, qty: 30, tags: [ "B", "A" ] },
+{ _id: 5, item: { name: "mn", code: "000", size: 12, sizes:[1,2,5] }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+])
+db.ninQuiz.find({qty: {$nin: [15,25,35]}})
+db.ninQuiz.find({"item.size": {$nin: [2,22]}})
+db.ninQuiz.find({"item.name": {$nin: ["xy","ab"]}})
+db.ninQuiz.find({tags: {$nin: [ ["A","B"], "D" ]   }})
+db.ninQuiz.find({"item.name": {$nin: ["xy","ab"]}})

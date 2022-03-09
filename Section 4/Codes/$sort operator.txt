@@ -1,0 +1,5 @@
+db.createCollection('sortOperator')
+
+db.sortOperator.insertMany([
+{ "_id" : 1, "tests" : [  89,  70,  89,  50 ] }
+])

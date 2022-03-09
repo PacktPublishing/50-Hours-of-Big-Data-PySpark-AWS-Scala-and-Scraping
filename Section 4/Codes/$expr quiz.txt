@@ -1,0 +1,14 @@
+db.createCollection('exprQuiz')
+
+db.exprQuiz.insertMany([
+{ "_id" : 1, "category" : "food", "budget": 400, "spent": 450 },
+{ "_id" : 2, "category" : "drinks", "budget": 100, "spent": 150 },
+{ "_id" : 3, "category" : "food", "budget": 100, "spent": 100 },
+{ "_id" : 4, "category" : "misc", "budget": 500, "spent": 300 },
+{ "_id" : 5, "category" : "travel", "budget": 200, "spent": 650 }
+])
+
+
+db.exprQuiz.find({$expr: {$eq: ["$budget","$spent"]}})
+db.exprQuiz.find({$expr: {$lt: ["$budget","$spent"]}})
+db.exprQuiz.find({$and: [{category: {$in:["food","drinks"]}}, {$expr: {$lt:["$budget","$spent"]}}  ]  })

@@ -1,0 +1,13 @@
+db.createCollection('eqQuiz')
+
+db.eqQuiz.insertMany([
+{ _id: 1, item: { name: "ab", code: "123", size: 20 }, qty: 15, tags: [ "A", "B", "C" ] },
+{ _id: 2, item: { name: "cd", code: "123", size: 10 }, qty: 20, tags: [ "B" ] },
+{ _id: 3, item: { name: "ij", code: "456", size: 15 }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456", size: 23 }, qty: 30, tags: [ "B", "A" ] },
+{ _id: 5, item: { name: "mn", code: "000", size: 12 }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+])
+
+
+db.eqQuiz.find({qty: {$eq: 15}})
+db.eqQuiz.find({"item.code": {$eq:"000" } })

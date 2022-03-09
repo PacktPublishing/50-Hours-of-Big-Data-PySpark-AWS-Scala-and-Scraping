@@ -1,0 +1,14 @@
+db.createCollection('orQuiz')
+
+db.orQuiz.insertMany([
+{ _id: 1, item: { name: "ab", code: "123", size: 20, sizes:[2,3,4] }, qty: 15, tags: [ "A", "B", "C", "D]" ] },
+{ _id: 2, item: { name: "cd", code: "123", size: 10, sizes:[1,2,5] }, qty: 20, tags: [ "B", "D" ] },
+{ _id: 3, item: { name: "ij", code: "456", size: 15, sizes:[1,2,3] }, qty: 25, tags: [ "A", "B" ] },
+{ _id: 4, item: { name: "xy", code: "456", size: 23, sizes:[1,2,4] }, qty: 30, tags: [ "B", "A" ] },
+{ _id: 5, item: { name: "mn", code: "000", size: 12, sizes:[1,2,5] }, qty: 20, tags: [ [ "A", "B" ], "C" ] }
+])
+
+db.orQuiz.find({$or: [{"item.name": "ab"}, {qty: {$ne: 15}}, {"item.size": {$eq: 15}}   ] })
+db.andQuiz.find({$or: [{tags: {$in: ["D","C"]}}, {"item.name": {$eq: "ab"}}   ]  })
+db.andQuiz.find({$or: [{"item.code": {$ne: "123"}}, {qty: {$gt: 15}}, {tags: {$in: ["A","D"]}}]})
+db.orQuiz.find({$or : [ {$and: [{qty: {$eq: 15}}, {"item.name":"ab"}]}, {$and: [{qty: {$eq: 20}}, {"item.name": {$eq: "cd"}}]}]})
